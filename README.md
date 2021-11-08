@@ -29,6 +29,9 @@ It exposes a number of different variables that will be used by the template scr
 - **NCPROJECT_HOMEPAGE**: The URL of your project homepage (used by installers).
 - **NCPROJECT_REVERSE_DNS**: The name of your project expressed in reverse domain name notation.
   It is used for the XDG Desktop file on Linux, the Bundle Identifier on macOS and for the java package namespace on Android.
+- **NCPROJECT_XDGDESKTOP_CATEGORIES**: The application [categories](https://specifications.freedesktop.org/menu-spec/latest/apa.html) for the XDG Desktop file on Linux.
+- **NCPROJECT_MACOS_CATEGORY**: The application [category](https://developer.apple.com/documentation/bundleresources/information_property_list/lsapplicationcategorytype) for the Info.plist file on macOS.
+
 - **NCPROJECT_INCLUDE_DIRS**: If your project uses one or more separate include directories for headers you can specify them with this variable.
   The paths to the include directories can be absolute or relative to `${CMAKE_SOURCE_DIR}.`
 - **NCPROJECT_SOURCES**: The list of source files that will be compiled.
