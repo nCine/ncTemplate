@@ -58,6 +58,7 @@ There are further options that you can setup when invoking CMake:
   - **NCPROJECT_NDK_ARCHITECTURES**: A list of target CPU architectures for the Android version of your project.
     The default is `arm64-v8a`.
   - **NCPROJECT_ASSEMBLE_APK**: If the option is on then the CMake script will try to assemble an APK by invoking Gradle.
+  - **NCPROJECT_UNIVERSAL_APK**: If the option is on the Android Gradle script is configured to assemble an additional APK that contains all ABIs specified in `${NCPROJECT_NDK_ARCHITECTURES}`.
 - **NCPROJECT_STRIP_BINARIES**: When turned on binary files will be stripped of their symbols to reduce their size.
   It does not work on Windows.
 - **NCPROJECT_DATA_DIR**: The path to the project root data directory.
