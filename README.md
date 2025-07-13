@@ -70,6 +70,10 @@ There are further options that you can setup when invoking CMake:
 - **NCPROJECT_ALWAYS_FIND_PACKAGES**: If the option is on then CMake will try to find dependency libraries even when the project is linking with a dynamic vesion of the nCine library.  
   This option can be useful to install dependendy libraries on platforms where the nCine doesn't copy them by default.  
   For example, if we have linked dynamically to the nCine and we want to create a Linux distribution of our game, we can enable this option and then access the `IMPORTED_LOCATION` property of our dependency targets.
+- **NCPROJECT_WITH_CRASHPAD**: When enabled, the `crashpad_handler` will be copied from the nCine directory (if available) to the executable directory.
+- **NCPROJECT_DEBUGINFO**: If this variable is set to `EXTRACT`, debug symbols will be extracted after building the executable and put in a separate file.
+  If it is set to `INSTALL`, then the symbols will be extracted and installed along with the game package.
+- **DEBUGINFO_DIR**: The path where the extracted symbols will be placed. The default value is a `symbols` directory inside the build directory.
 
 ### Android-only variables
 
