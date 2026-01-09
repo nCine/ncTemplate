@@ -67,13 +67,11 @@ There are further options that you can setup when invoking CMake:
 - **NCINE_EXTERNAL_DIR**: The path to the nCine external dependencies directory.  
   The default is to search for a directory at the same level of your project one that is called `nCine-external`.  
   You don't usually need to change the value of this variable.
-- **NCPROJECT_ALWAYS_FIND_PACKAGES**: If the option is on then CMake will try to find dependency libraries even when the project is linking with a dynamic vesion of the nCine library.  
-  This option can be useful to install dependendy libraries on platforms where the nCine doesn't copy them by default.  
-  For example, if we have linked dynamically to the nCine and we want to create a Linux distribution of our game, we can enable this option and then access the `IMPORTED_LOCATION` property of our dependency targets.
 - **NCPROJECT_WITH_CRASHPAD**: When enabled, the `crashpad_handler` will be copied from the nCine directory (if available) to the executable directory.
 - **NCPROJECT_DEBUGINFO**: If this variable is set to `EXTRACT`, debug symbols will be extracted after building the executable and put in a separate file.
   If it is set to `INSTALL`, then the symbols will be extracted and installed along with the game package.
 - **DEBUGINFO_DIR**: The path where the extracted symbols will be placed. The default value is a `symbols` directory inside the build directory.
+- **CMAKE_SKIP_INSTALL_RPATH**: Set this to `TRUE` when preparing a Linux or MinGW distribution package. CMake will avoid adding `RUNPATH` entries to installed binaries (on Linux), and the nCine project scripts will skip copying dependency libraries during installation.
 
 ### Android-only variables
 
