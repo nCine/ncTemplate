@@ -8,15 +8,14 @@ env:
 on: [push, workflow_dispatch]
 
 jobs:
-  analyze:
-    name: 'Analyze'
-    runs-on: 'ubuntu-24.04'
-
+  Analyze:
     strategy:
       fail-fast: false
 
+    runs-on: 'ubuntu-24.04'
+
     steps:
-    - name: 'Checkout Repository'
+    - name: 'Checkout Code'
       uses: actions/checkout@v4
 
     - name: 'Initialize CodeQL'
@@ -25,6 +24,10 @@ jobs:
         languages: 'cpp'
 
     - run: |
+        # Install Build Dependencies on Linux
+        sudo apt-get update
+        sudo apt-get install -y libgl1-mesa-dev libopengl-dev libegl1-mesa-dev libglvnd-dev libxext-dev libxrandr-dev libwayland-dev
+
         # Download nCine-libraries, nCine Artifacts, and project data
         export OS=linux
         export CC=gcc
